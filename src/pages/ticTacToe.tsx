@@ -33,14 +33,14 @@ const TicTacToe = (): JSX.Element => {
                 // console.log("Moves:", remember);
             }
             
+            const winners = checkWinner(next);
+            console.log(winners);
+            if (winners) {
+                alert(`Winner is ${blocks[winners[0]]}!`);
+            }
             return next;
         });
-        
-        const winners = checkWinner();
-        console.log(winners);
-        if (winners) {
-            alert(`Winner is ${blocks[winners[0]]}!`);
-        }
+
     }
     // Undo function
     const undo = () => {
@@ -67,7 +67,7 @@ const TicTacToe = (): JSX.Element => {
     // useEffect(() => {
 
     // }, [])
-    const checkWinner = () => {
+    const checkWinner = (blocks: string[]): number[] | null => {
         console.log(winningCombinations);
         console.log(blocks);
         for(const combo of winningCombinations) {
