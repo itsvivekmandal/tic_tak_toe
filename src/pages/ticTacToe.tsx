@@ -43,7 +43,7 @@ const TicTacToe = (): JSX.Element => {
     }
     // Undo function
     const undo = () => {
-        var last = remember.pop();
+        const last = remember.pop();
         if(last !== undefined && last !== null) {
             setBlocks((prev) => {
                 const next = [...prev];
@@ -69,7 +69,7 @@ const TicTacToe = (): JSX.Element => {
     const checkWinner = () => {
         console.log(winningCombinations);
         console.log(blocks);
-        for(let combo of winningCombinations) {
+        for(const combo of winningCombinations) {
             console.log(combo);
             const [a, b, c] = combo;
             if(blocks[a] && blocks[a] === blocks[b] && blocks[b] === blocks[c]) {
