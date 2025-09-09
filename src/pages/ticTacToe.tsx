@@ -20,6 +20,7 @@ const TicTacToe = (): JSX.Element => {
         [2, 4, 6], // diagonal
     ];
 
+
     // Set move
     const move = (i: number) => {
         setBlocks(prev => {
@@ -32,14 +33,14 @@ const TicTacToe = (): JSX.Element => {
                 // console.log("Moves:", remember);
             }
             
-            const winners = checkWinner();
-            console.log(winners);
-            if (winners) {
-                alert(`Winner is ${blocks[winners[0]]}!`);
-            }
             return next;
         });
-
+        
+        const winners = checkWinner();
+        console.log(winners);
+        if (winners) {
+            alert(`Winner is ${blocks[winners[0]]}!`);
+        }
     }
     // Undo function
     const undo = () => {
