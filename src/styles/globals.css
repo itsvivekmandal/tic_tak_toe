@@ -29,3 +29,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Winning Line effect */
+@keyframes grow-line {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.animate-grow-line {
+  animation: grow-line 1s ease-in-out forwards;
+}
+
